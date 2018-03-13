@@ -131,7 +131,7 @@ public class LauncherAppState {
                     mContext.getContentResolver()) {
                 @Override
                 public void onSettingChanged(boolean isNotificationBadgingEnabled) {
-                    if (isNotificationBadgingEnabled) {
+                    if (isNotificationBadgingEnabled && Utilities.ATLEAST_NOUGAT) {
                         NotificationListener.requestRebind(new ComponentName(
                                 mContext, NotificationListener.class));
                     }
@@ -184,9 +184,9 @@ public class LauncherAppState {
     }
 
     private static LauncherProvider getLocalProvider(Context context) {
-        try (ContentProviderClient cl = context.getContentResolver()
-                .acquireContentProviderClient(LauncherProvider.AUTHORITY)) {
-            return (LauncherProvider) cl.getLocalContentProvider();
-        }
+        ContentProviderClient cl = context.getContentResolver().acquireContentProviderClient(LauncherProvider.AUTHORITY);
+        LauncherProvider provider = (LauncherProvider) cl.getLocalContentProvider();
+        cl.release();
+        return provider;
     }
 }

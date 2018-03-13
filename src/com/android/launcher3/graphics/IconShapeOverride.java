@@ -62,6 +62,7 @@ public class IconShapeOverride {
         if (!Utilities.ATLEAST_OREO) {
             return false;
         }
+
         try {
             if (getSystemResField().get(null) != Resources.getSystem()) {
                 // Our assumption that mSystem is the system resource is not true.

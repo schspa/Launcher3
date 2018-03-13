@@ -13,7 +13,7 @@
 
     <!-- A string pointer to the original app name string. This allows derived projects to
      easily override the app name without providing all translations -->
-    <string name="derived_app_name" translatable="false">@string/app_name</string>
+    <string name="derived_app_name" translatable="false">@string/app_name_pixel_launcher</string>
 
     <!-- String representing the intent for search on the apps market. To specify a query, add
     q=<query> to the data to the intent -->
@@ -27,6 +27,7 @@
     <string-array translatable="false" name="icon_shape_override_paths_values">
         <item></item>
         <item>M50,0L100,0 100,100 0,100 0,0z</item>
+        <item>M50,0L70,0 A30,30,0,0 1 100,30 L100,70 A30,30,0,0 1 70,100 L30,100 A30,30,0,0 1 0,70 L 0,30 A30,30,0,0 1 30,0z</item>
         <item>M50,0 C10,0 0,10 0,50 0,90 10,100 50,100 90,100 100,90 100,50 100,10 90,0 50,0 Z</item>
         <item>M50 0A50 50,0,1,1,50 100A50 50,0,1,1,50 0</item>
         <item>M50,0A50,50,0,0 1 100,50 L100,85 A15,15,0,0 1 85,100 L50,100 A50,50,0,0 1 50,0z</item>
@@ -36,6 +37,7 @@
         <!-- Option to not change the icon shape on home screen. [CHAR LIMIT=50] -->
         <item>@string/icon_shape_system_default</item>
         <item>@string/icon_shape_square</item>
+        <item>@string/icon_shape_rounded_square</item>
         <item>@string/icon_shape_squircle</item>
         <item>@string/icon_shape_circle</item>
         <item>@string/icon_shape_teardrop</item>
@@ -102,16 +104,16 @@
 
     <!-- Name of a subclass of com.android.launcher3.AppFilter used to
          filter the activities shown in the launcher. Can be empty. -->
-    <string name="app_filter_class" translatable="false"></string>
+    <string name="app_filter_class" translatable="false">com.google.android.apps.nexuslauncher.CustomAppFilter</string>
 
     <!-- Name of an icon provider class. -->
-    <string name="icon_provider_class" translatable="false"></string>
+    <string name="icon_provider_class" translatable="false">com.google.android.apps.nexuslauncher.CustomIconProvider</string>
 
     <!-- Name of a drawable factory class. -->
-    <string name="drawable_factory_class" translatable="false"></string>
+    <string name="drawable_factory_class" translatable="false">com.google.android.apps.nexuslauncher.CustomDrawableFactory</string>
 
     <!-- Name of a user event dispatcher class. -->
-    <string name="user_event_dispatcher_class" translatable="false"></string>
+    <string name="user_event_dispatcher_class" translatable="false">com.google.android.apps.nexuslauncher.CustomAppPredictor</string>
 
     <!-- Name of a color extraction implementation class. -->
     <string name="color_extraction_impl_class" translatable="false"></string>

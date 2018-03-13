@@ -17,6 +17,7 @@
 package com.android.launcher3.dragndrop;
 
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Point;
@@ -138,7 +139,7 @@ public class DragController implements DragDriver.EventListener, TouchController
         }
 
         // Hide soft keyboard, if visible
-        mLauncher.getSystemService(InputMethodManager.class)
+        ((InputMethodManager) mLauncher.getSystemService(Context.INPUT_METHOD_SERVICE))
                 .hideSoftInputFromWindow(mWindowToken, 0);
 
         mOptions = options;
